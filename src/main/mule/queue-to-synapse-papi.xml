@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:mule-googlepubsub="http://www.mulesoft.org/schema/mule/mule-googlepubsub" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/mule-googlepubsub http://www.mulesoft.org/schema/mule/mule-googlepubsub/current/mule-mule-googlepubsub.xsd">
+	<flow name="insert-message-into-dw" doc:id="7c6cab1f-612e-4ec6-9310-682cd141020d" >
+		<try doc:name="start db transaction" doc:id="c6a3ef12-d2da-49ef-9dc2-0cf0c31d486c" transactionalAction="ALWAYS_BEGIN">
+			<set-variable value="#[uuid()]" doc:name="transactionUUID" doc:id="268f8653-7c6b-40a9-8184-07dcbd1c4a1e" variableName="transactionUUID"/>
+			<ee:transform doc:name="parameterize input" doc:id="11354b41-9053-418a-aba2-9a4b2dbb6233">
+			<ee:message>
+			</ee:message>
+			<ee:variables>
+				<ee:set-variable variableName="msg"><![CDATA[%dw 2.0
+output application/java
+---
+{
+	msgUUID: vars.transactionUUID,
+	retailStoreID: payload.retailStoreID,
+	workstationID: payload.workstationID,
+	tillID: payload.tillID,
+	sequenceNumber: payload.sequenceNumber,
+	businessDayDate: payload.businessDayDate[0 to -7],
+	beginDateTime: payload.beginDateTime,
+	endDateTime: payload.endDateTime,
+	operator: payload.operatorID.operatorName,
+	operatorWorkerID: payload.operatorID.workerID,
+	currencyCode: payload.currencyCode
+}]]></ee:set-variable>
+					<ee:set-variable variableName="transaction" ><![CDATA[%dw 2.0
+output application/java
+var total = (totalKey) ->
+	(payload.retailTransaction.total filter ($.totalType == totalKey))[0].value
+---
+{
+	msgUUID: vars.transactionUUID,
+	receiptDateTime: payload.retailTransaction.receiptDateTime,
+	transactionGrandAmount: total('TransactionGrandAmount'),
+	transactionNetAmount: total('TransactionNetAmount'),
+	transactionTaxAmount: total('TransactionTaxAmount'),
+	negativeTotalFlag: if (payload.retailTransaction.negativeTotalFlag) 1 else 0,
+	lineItems: write(payload.retailTransaction.lineItem, 'applicaton/json')
+}
+
+/*
+ *     msgUUID VARCHAR(50),
+    receiptDateTime DATETIME,
+    transactionGrandAmount DECIMAL,
+    transactionNetAmount DECIMAL,
+    transactionTaxAmount DECIMAL,
+    negativeTotalFlag BIT,
+    lineItems NVARCHAR(4000)
+ */]]></ee:set-variable>
+			</ee:variables>
+		</ee:transform>
+			<db:insert doc:name="insert msg" doc:id="bb0d6de3-d701-4f9f-b3af-fa866cef7aa1" transactionalAction="ALWAYS_JOIN" config-ref="Database_Config" target="insertResult">
+				<db:sql><![CDATA[INSERT INTO dbo.messages
+(
+	msgUUID,
+	retailStoreID, 
+	workstationID, 
+	tillID, 
+	sequenceNumber, 
+	businessDayDate, 
+	beginDateTime, 
+	endDateTime, 
+	operator, 
+	operatorWorkerID, 
+	currencyCode
+) 
+VALUES 
+(
+	:msgUUID,
+	:retailStoreID, 
+	:workstationID, 
+	:tillID, 
+	:sequenceNumber, 
+	:businessDayDate, 
+	:beginDateTime, 
+	:endDateTime, 
+	:operator, 
+	:operatorWorkerID, 
+	:currencyCode
+)]]></db:sql>
+				<db:input-parameters><![CDATA[#[vars.msg]]]></db:input-parameters>
+			</db:insert>
+			<db:insert doc:name="insert retailTransaction" doc:id="43e52cc0-f652-47bf-aaae-7c39c2915b97" config-ref="Database_Config" target="insertResult2">
+				<db:sql ><![CDATA[INSERT INTO dbo.transactions
+(
+	msgUUID,
+	receiptDateTime,
+	transactionGrandAmount,
+	transactionNetAmount,
+	transactionTaxAmount,
+	negativeTotalFlag
+)
+VALUES
+(
+	:msgUUID,
+	:receiptDateTime,
+	:transactionGrandAmount,
+	:transactionNetAmount,
+	:transactionTaxAmount,
+	:negativeTotalFlag
+)]]></db:sql>
+				<db:input-parameters ><![CDATA[#[vars.transaction]]]></db:input-parameters>
+			</db:insert>
+			<db:bulk-insert doc:name="Bulk insert" doc:id="e3950f0b-b03d-4ca5-98a3-112e94389817" config-ref="Database_Config">
+				<db:bulk-input-parameters ><![CDATA[#[payload.retailTransaction.lineItem map {
+	msgUUID: vars.transactionUUID,
+	lineItem: write($, 'application/json')
+}]]]></db:bulk-input-parameters>
+				<db:sql ><![CDATA[INSERT INTO dbo.lineItems (msgUUID, lineItem) VALUES (:msgUUID, :lineItem)]]></db:sql>
+			</db:bulk-insert>
+			<logger level="INFO" doc:name="Logger" doc:id="83f6bc02-40ca-42ee-9e39-18a77268a551" />
+		</try>
+	</flow>
+	<flow name="queue-to-synapse-papiFlow" doc:id="fffa46a0-db64-4248-aa85-5949fc41bde6" >
+		<http:listener doc:name="Listener" doc:id="dbf6a30d-3f08-479b-9cce-0b188f20aa3c" path="/test" config-ref="HTTP_Listener_config"/>
+		<flow-ref doc:name="Flow Reference" doc:id="93febcc7-5c0d-442c-bbb2-c29808502ba1" name="insert-message-into-dw" />
+	</flow>
+</mule>

@@ -1,0 +1,620 @@
+{
+  "retailStoreID": "5918",
+  "workstationID": "6",
+  "tillID": "6",
+  "sequenceNumber": 7,
+  "businessDayDate": "2021-03-08-06:00",
+  "beginDateTime": "2021-03-08T13:46:20",
+  "endDateTime": "2021-03-08T13:48:01",
+  "operatorID": {
+    "value": "",
+    "operatorName": "Pete Edelstein",
+    "workerID": "845773"
+  },
+  "currencyCode": "USD",
+  "retailTransaction": {
+    "receiptDateTime": "2021-03-08T13:48:01",
+    "lineItem": [
+      {
+        "sequenceNumber": 0,
+        "beginDateTime": "2021-03-08T13:46:21",
+        "sale": {
+          "itemID": {
+            "value": "71042",
+            "name": "BUFFALO CHKN STRIPS"
+          },
+          "specialOrderNumber": null,
+          "merchandiseHierarchy": "3529",
+          "epc": [],
+          "description": "BUFFALO CHKN STRIPS",
+          "taxIncludedInPriceFlag": false,
+          "regularSalesUnitPrice": {
+            "value": 3.49,
+            "currency": null,
+            "foreignAmount": null,
+            "quantity": 1,
+            "unitOfMeasureCode": null
+          },
+          "extendedAmount": 3.49,
+          "extendedDiscountAmount": null,
+          "quantity": {
+            "value": 1,
+            "units": 1,
+            "unitOfMeasureCode": "CT"
+          },
+          "associate": [
+            {
+              "associateID": {
+                "value": "845773",
+                "operatorName": "Pete Edelstein",
+                "workerID": null
+              },
+              "commissionGivenFlag": false
+            }
+          ],
+          "retailPriceModifier": [],
+          "tax": [],
+          "serialNumber": [],
+          "transactionLink": [],
+          "foodservice": null,
+          "extendedPositionAmount": 3.49,
+          "merchandiseStructureItemFlag": false,
+          "itemLink": null,
+          "concessionSupplierID": null,
+          "specialOfferNumber": null,
+          "ageTypeCode": null,
+          "authorizedForSalesFlag": true,
+          "priceOrigin": null,
+          "loyaltyReward": [],
+          "externalReceiptReferenceList": null,
+          "itemNotFoundList": null,
+          "invoiceNumber": null,
+          "reasonCode": [],
+          "giftCertificateData": null,
+          "salesOrderData": null,
+          "any": [],
+          "itemType": "Stock",
+          "otherAttributes": {},
+          "posidentity": [
+            {
+              "qualifier": null,
+              "positemID": "71042",
+              "posidtype": "RegistrationNumber"
+            },
+            {
+              "qualifier": null,
+              "positemID": "71042",
+              "posidtype": "MasterData"
+            }
+          ]
+        },
+        "rounding": null,
+        "sesRounding": null,
+        "voids": null,
+        "loyaltyReward": null,
+        "tax": null,
+        "tender": null,
+        "operatorBypassApproval": null,
+        "directVoidFlag": false,
+        "negativeAmountFlag": null,
+        "keyedOfflineCode": "OnLine",
+        "receiptPositionAddonList": {
+          "addon": [
+            {
+              "addonPos": 1,
+              "key": "QuantityInputTypeCode",
+              "value": "00",
+              "any": []
+            }
+          ]
+        },
+        "lineItemBinaryDataList": null,
+        "any": [],
+        "voidFlag": true,
+        "entryMethod": "Keyed",
+        "otherAttributes": {},
+        "return": null
+      },
+      {
+        "sequenceNumber": 2,
+        "beginDateTime": "2021-03-08T13:46:49",
+        "sale": null,
+        "rounding": null,
+        "sesRounding": null,
+        "voids": {
+          "itemLink": {
+            "sequenceNumber": 7,
+            "lineItemSequenceNumber": 0,
+            "voidReasonCode": null,
+            "any": [],
+            "reasonCode": "Voided"
+          }
+        },
+        "loyaltyReward": null,
+        "tax": null,
+        "tender": null,
+        "operatorBypassApproval": null,
+        "directVoidFlag": false,
+        "negativeAmountFlag": null,
+        "keyedOfflineCode": "OnLine",
+        "receiptPositionAddonList": null,
+        "lineItemBinaryDataList": null,
+        "any": [],
+        "voidFlag": false,
+        "entryMethod": "Scanned",
+        "otherAttributes": {},
+        "return": null
+      },
+      {
+        "sequenceNumber": 4,
+        "beginDateTime": "2021-03-08T13:46:57",
+        "sale": {
+          "itemID": {
+            "value": "71602",
+            "name": "MAPLE WAFFLE W/CHKN"
+          },
+          "specialOrderNumber": null,
+          "merchandiseHierarchy": "3527",
+          "epc": [],
+          "description": "MAPLE WAFFLE W/CHKN",
+          "taxIncludedInPriceFlag": false,
+          "regularSalesUnitPrice": {
+            "value": 3.49,
+            "currency": null,
+            "foreignAmount": null,
+            "quantity": 1,
+            "unitOfMeasureCode": null
+          },
+          "extendedAmount": 3.32,
+          "extendedDiscountAmount": null,
+          "quantity": {
+            "value": 1,
+            "units": 1,
+            "unitOfMeasureCode": "CT"
+          },
+          "associate": [
+            {
+              "associateID": {
+                "value": "845773",
+                "operatorName": "Pete Edelstein",
+                "workerID": null
+              },
+              "commissionGivenFlag": false
+            }
+          ],
+          "retailPriceModifier": [
+            {
+              "sequenceNumber": 1,
+              "amount": {
+                "value": 0.17,
+                "action": "Subtract"
+              },
+              "promotionID": "Item % Discount",
+              "priceDerivationRule": {
+                "priceDerivationRuleID": "",
+                "eligibility": null,
+                "amount": {
+                  "value": 0.17,
+                  "action": "Subtract"
+                },
+                "origin": "04",
+                "appliedQuantity": 1,
+                "ruleDescription": null,
+                "any": [],
+                "otherAttributes": {}
+              },
+              "reasonCode": "IDSG",
+              "rebateMethod": "ZRAP",
+              "rebateID": "ITEMPERCENTOFFDISCOUNT",
+              "percent": {
+                "value": 5,
+                "action": "Subtract"
+              },
+              "externalOfferID": null,
+              "additionalPriceTypeCode": null,
+              "any": []
+            }
+          ],
+          "tax": [
+            {
+              "taxAuthority": "343",
+              "taxableAmount": 3.32,
+              "amount": 0.03,
+              "percent": 1,
+              "taxExemption": null,
+              "taxOverride": null,
+              "taxGroupID": "S19C073",
+              "any": [],
+              "taxType": "Common",
+              "taxSubType": "Standard",
+              "typeCode": "Sale",
+              "otherAttributes": {}
+            }
+          ],
+          "serialNumber": [],
+          "transactionLink": [],
+          "foodservice": null,
+          "extendedPositionAmount": 3.32,
+          "merchandiseStructureItemFlag": false,
+          "itemLink": null,
+          "concessionSupplierID": null,
+          "specialOfferNumber": null,
+          "ageTypeCode": null,
+          "authorizedForSalesFlag": true,
+          "priceOrigin": null,
+          "loyaltyReward": [],
+          "externalReceiptReferenceList": null,
+          "itemNotFoundList": null,
+          "invoiceNumber": null,
+          "reasonCode": [],
+          "giftCertificateData": null,
+          "salesOrderData": null,
+          "any": [],
+          "itemType": "Stock",
+          "otherAttributes": {},
+          "posidentity": [
+            {
+              "qualifier": null,
+              "positemID": "71602",
+              "posidtype": "RegistrationNumber"
+            },
+            {
+              "qualifier": null,
+              "positemID": "71602",
+              "posidtype": "MasterData"
+            }
+          ]
+        },
+        "rounding": null,
+        "sesRounding": null,
+        "voids": null,
+        "loyaltyReward": null,
+        "tax": null,
+        "tender": null,
+        "operatorBypassApproval": null,
+        "directVoidFlag": null,
+        "negativeAmountFlag": null,
+        "keyedOfflineCode": "OnLine",
+        "receiptPositionAddonList": {
+          "addon": [
+            {
+              "addonPos": 1,
+              "key": "QuantityInputTypeCode",
+              "value": "00",
+              "any": []
+            }
+          ]
+        },
+        "lineItemBinaryDataList": null,
+        "any": [],
+        "voidFlag": false,
+        "entryMethod": "SES:KeyedPerDuplicate",
+        "otherAttributes": {},
+        "return": null
+      },
+      {
+        "sequenceNumber": 5,
+        "beginDateTime": "2021-03-08T13:47:31",
+        "sale": null,
+        "rounding": null,
+        "sesRounding": null,
+        "voids": null,
+        "loyaltyReward": null,
+        "tax": null,
+        "tender": null,
+        "operatorBypassApproval": null,
+        "directVoidFlag": null,
+        "negativeAmountFlag": null,
+        "keyedOfflineCode": "OnLine",
+        "receiptPositionAddonList": {
+          "addon": [
+            {
+              "addonPos": 1,
+              "key": "QuantityInputTypeCode",
+              "value": "00",
+              "any": []
+            }
+          ]
+        },
+        "lineItemBinaryDataList": null,
+        "any": [],
+        "voidFlag": false,
+        "entryMethod": "Keyed",
+        "otherAttributes": {},
+        "return": {
+          "itemID": {
+            "value": "71555",
+            "name": "POPCORN SHRIMP"
+          },
+          "specialOrderNumber": null,
+          "merchandiseHierarchy": "3529",
+          "epc": [],
+          "description": "POPCORN SHRIMP",
+          "taxIncludedInPriceFlag": false,
+          "regularSalesUnitPrice": {
+            "value": 2.99,
+            "currency": null,
+            "foreignAmount": null,
+            "quantity": 1,
+            "unitOfMeasureCode": null
+          },
+          "extendedAmount": 2.99,
+          "extendedDiscountAmount": null,
+          "quantity": {
+            "value": 1,
+            "units": 1,
+            "unitOfMeasureCode": "CT"
+          },
+          "associate": [
+            {
+              "associateID": {
+                "value": "845773",
+                "operatorName": "Pete Edelstein",
+                "workerID": null
+              },
+              "commissionGivenFlag": false
+            }
+          ],
+          "retailPriceModifier": [],
+          "tax": [
+            {
+              "taxAuthority": "343",
+              "taxableAmount": 2.99,
+              "amount": 0.03,
+              "percent": 1,
+              "taxExemption": null,
+              "taxOverride": null,
+              "taxGroupID": "S19C073",
+              "any": [],
+              "taxType": "Common",
+              "taxSubType": "Standard",
+              "typeCode": "Refund",
+              "otherAttributes": {}
+            }
+          ],
+          "serialNumber": [],
+          "transactionLink": [],
+          "foodservice": null,
+          "extendedPositionAmount": 2.99,
+          "merchandiseStructureItemFlag": false,
+          "itemLink": null,
+          "concessionSupplierID": null,
+          "specialOfferNumber": null,
+          "ageTypeCode": null,
+          "authorizedForSalesFlag": true,
+          "priceOrigin": null,
+          "loyaltyReward": [],
+          "externalReceiptReferenceList": null,
+          "itemNotFoundList": null,
+          "invoiceNumber": null,
+          "reasonCode": [
+            {
+              "value": "RTDT",
+              "reasonType": "Return",
+              "description": "Outdated"
+            }
+          ],
+          "giftCertificateData": null,
+          "salesOrderData": null,
+          "any": [],
+          "itemType": "Stock",
+          "otherAttributes": {},
+          "posidentity": [
+            {
+              "qualifier": null,
+              "positemID": "71555",
+              "posidtype": "RegistrationNumber"
+            },
+            {
+              "qualifier": null,
+              "positemID": "71555",
+              "posidtype": "MasterData"
+            }
+          ]
+        }
+      },
+      {
+        "sequenceNumber": 6,
+        "beginDateTime": "2021-03-08T13:47:50",
+        "sale": null,
+        "rounding": null,
+        "sesRounding": null,
+        "voids": null,
+        "loyaltyReward": null,
+        "tax": null,
+        "tender": {
+          "tenderID": "CHK2",
+          "amount": {
+            "value": 0.33,
+            "currency": null,
+            "foreignAmount": null
+          },
+          "tenderChange": null,
+          "cashback": null,
+          "authorization": null,
+          "tip": null,
+          "foreignCurrency": null,
+          "check": null,
+          "creditDebit": null,
+          "coupon": null,
+          "voucher": {
+            "serialNumber": "",
+            "typeCode": "SES:PaperGiftCertificate"
+          },
+          "loyaltyRedemption": null,
+          "any": [],
+          "tenderType": "CHK2",
+          "typeCode": "Sale",
+          "tenderDescription": "Check 2",
+          "otherAttributes": {}
+        },
+        "operatorBypassApproval": null,
+        "directVoidFlag": null,
+        "negativeAmountFlag": null,
+        "keyedOfflineCode": "OnLine",
+        "receiptPositionAddonList": null,
+        "lineItemBinaryDataList": null,
+        "any": [],
+        "voidFlag": false,
+        "entryMethod": "Scanned",
+        "otherAttributes": {},
+        "return": null
+      }
+    ],
+    "total": [
+      {
+        "value": 0.33,
+        "totalType": "TransactionGrandAmount",
+        "otherAttributes": {}
+      },
+      {
+        "value": 0.33,
+        "totalType": "TransactionNetAmount",
+        "otherAttributes": {}
+      },
+      {
+        "value": 0,
+        "totalType": "TransactionTaxAmount",
+        "otherAttributes": {}
+      }
+    ],
+    "customer": [],
+    "transactionLink": [],
+    "customerSurvey": [],
+    "negativeTotalFlag": false,
+    "amendmentFlag": false,
+    "emailRequestedFlag": false,
+    "emailAddress": null,
+    "invoicePrintoutTypeCode": null,
+    "invoiceNumber": null,
+    "any": [],
+    "transactionStatus": "Finished"
+  },
+  "tenderControlTransaction": null,
+  "controlTransaction": null,
+  "tenantID": "001",
+  "locationID": null,
+  "operatorBypassApproval": null,
+  "receiptHeaderAddonList": {
+    "addon": [
+      {
+        "addonPos": 0,
+        "key": "ADDITIONAL_PRINTOUT_DONE",
+        "value": "TRUE",
+        "any": []
+      },
+      {
+        "addonPos": 0,
+        "key": "END_DATE_TIMESTAMP_EXTENSION",
+        "value": "2021-03-08T13:48:01.688",
+        "any": []
+      },
+      {
+        "addonPos": 0,
+        "key": "GKR_TX_CHAIN",
+        "value": "5yx71aa94a068b748449cc8a8657ca5f",
+        "any": []
+      },
+      {
+        "addonPos": 1,
+        "key": "GKR_TX_CHAIN",
+        "value": "1.0",
+        "any": []
+      },
+      {
+        "addonPos": 2,
+        "key": "GKR_TX_CHAIN",
+        "value": "7a640d638be3cfbd2879c759155c616439f5b597d2f7f70b3aa3f6c1",
+        "any": []
+      },
+      {
+        "addonPos": 0,
+        "key": "LOYALTY_FUEL_SAVER_AMOUNT_EARNED",
+        "value": "0.0",
+        "any": []
+      },
+      {
+        "addonPos": 0,
+        "key": "LOYALTY_FUEL_SAVER_TOTAL_REWARDS",
+        "value": "0.0",
+        "any": []
+      },
+      {
+        "addonPos": 0,
+        "key": "REPORT_PRINTED",
+        "value": "TRANSACTION",
+        "any": []
+      },
+      {
+        "addonPos": 0,
+        "key": "SALES_TAX_AUTHORITY_ID",
+        "value": "343",
+        "any": []
+      },
+      {
+        "addonPos": 0,
+        "key": "SUBTOTAL_DEFINED",
+        "value": "TRUE",
+        "any": []
+      }
+    ]
+  },
+  "receiptTimerList": {
+    "timer": [
+      {
+        "timerID": 76,
+        "startTimestamp": "2021-03-08T13:46:20",
+        "duration": 90,
+        "any": []
+      },
+      {
+        "timerID": 77,
+        "startTimestamp": "2021-03-08T13:47:50",
+        "duration": 11,
+        "any": []
+      }
+    ]
+  },
+  "priceInformationList": null,
+  "businessBeginDateTime": null,
+  "businessEndDateTime": null,
+  "internalSequenceNumber": null,
+  "receiptReturnedFlag": false,
+  "reasonCode": null,
+  "postVoidedFlag": false,
+  "transactionSoftwareVersion": "POS-Client v5.13.0-HF02-b01",
+  "softwareVersion": "POS-Server v5.15.3-b02",
+  "loyaltyAccount": [],
+  "keyedOfflineCode": "OnLine",
+  "internalTransactionID": "5yxb5ff5074a2a7470fab741a99f12a7",
+  "fiscalSequenceNumber": null,
+  "fiscalFlag": false,
+  "fiscalDayNumber": null,
+  "fiscalPrinterID": null,
+  "fiscalSignature": null,
+  "transactionBinaryDataList": {
+    "binaryData": [
+      {
+        "name": "Journal",
+        "content": "CgoKQklUTUFQIFsKV0lEVEggPSAtMTEKQUxJR05NRU5UID0gQ0VOVEVSCkZJTEVOQU1FID0gQzpcR0tSZXRhaWxccG9zLWZ1bGxcY29uZmlnXHN0YW5kYXJkXHBhcmFtZXRlclxjbGllbnRcbG9nby5ibXAKXQogICAgICAzODAxIFMuIEphbWVzIFN0LiBTdWl0ZSA0MDAgICAgICAgCiAgICAgICAgICAgIEdyaW1lcywgSUEgNTAxMTEgICAgICAgICAgICAKICAgICAgICAgICAgICg1MTUpIDE1MS01MTUxICAgICAgICAgICAgIAogICAgICAgIDU5MThEaXJlY3RvckBIeS1WZWUuY29tICAgICAgICAgCgoKCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgVVNECkl0ZW0vR1RJTiA3MTYwMiAgICAgICAgICAKTUFQTEUgV0FGRkxFIFcvQ0hLTiAgICAgICAgICAgICAgMy40OSBUCkl0ZW0gJSBEaXNjb3VudCA1JSAgICAgICAgICAgICAgLTAuMTcKUmVhc29uOiBTY2FuIEd1YXJhbnRlZSAgICAgICAgICAgICAgCgpSZXR1cm4gICAgICAgICAgICAgIApJdGVtL0dUSU4gNzE1NTUgICAgICAgICAgClBPUENPUk4gU0hSSU1QICAgICAgICAgICAgICAgICAgLTIuOTkgVApSZWFzb246IE91dGRhdGVkICAgIAoKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLS0tLS0tLS0tLQpTVUJUT1RBTCBbMV0gICAgICAgICAgVVNEICAgICAgICAwLjMzCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0tLS0tLS0tLS0KVE9UQUwgICAgICAgICAgICAgICAgIFVTRCAgICAgICAgMC4zMwpDaGVjayAyICAgICAgICAgICAgICAgVVNEICAgICAgICAwLjMzCgoKCkJBUkNPREUgWwpCQVJDT0RFVFlQRSA9IFRZUEVfMk9GNQpIRUlHSFQgPSAzCkFMSUdOTUVOVCA9IENFTlRFUgpCQVJDT0RFVEVYVFBPU0lUSU9OID0gQUJPVkUKVkFMVUUgPSAwMDE1OTE4MDgwMzIxMDA2MDAwMDA3CkJBUkNPREVURVhUUE9TSVRJT04gPSBBQk9WRQpXSURUSCA9IDIKXQoKCiAgICAbfGJDQ2FzaGllciBOYW1lOiBNaWNoZWxsZSAgICAgICAgICAgICAgCgoKCkRhdGUgICAgIFRpbWUgICAgIFN0b3JlICAgUE9TICBFbXAgIFRSWCAKMDMvMDgvMjEgMDE6NDggUE0gNTkxOCAgICA2ICAgODQ1NzcgMDAwNwoKICAgICAgICAgVGhhbmtzIGZvciBzaG9wcGluZyBhdCAgICAgICAgIAogICAgICAgICAgICAgICAgIEh5LVZlZSAgICAgICAgICAgICAgICAgCiAgICAgICAgICBWaXNpdCB1cyBvbiB0aGUgV2ViICAgICAgICAgICAKICAgICAgICAgICAgIHd3dy5oeS12ZWUuY29tICAgICAgICAgICAgIAo=",
+        "any": []
+      },
+      {
+        "name": "Journal",
+        "content": "CgoKQklUTUFQIFsKV0lEVEggPSAtMTEKQUxJR05NRU5UID0gQ0VOVEVSCkZJTEVOQU1FID0gQzpcR0tSZXRhaWxccG9zLWZ1bGxcY29uZmlnXHN0YW5kYXJkXHBhcmFtZXRlclxjbGllbnRcbG9nby5ibXAKXQogICAgICAzODAxIFMuIEphbWVzIFN0LiBTdWl0ZSA0MDAgICAgICAgCiAgICAgICAgICAgIEdyaW1lcywgSUEgNTAxMTEgICAgICAgICAgICAKICAgICAgICAgICAgICg1MTUpIDE1MS01MTUxICAgICAgICAgICAgIAogICAgICAgIDU5MThEaXJlY3RvckBIeS1WZWUuY29tICAgICAgICAgCgoKCiAgICAgICAqKiogUkVUVVJOIFRSQU5TQUNUSU9OICoqKiAgICAgICAKCgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFVTRApSZXR1cm4gICAgICAgICAgICAgIApJdGVtL0dUSU4gNzE1NTUgICAgICAgICAgClBPUENPUk4gU0hSSU1QICAgICAgICAgICAgICAgICAgLTIuOTkgVApSZWFzb246IE91dGRhdGVkICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAtLS0tLS0tLS0tLQpUT1RBTCAgICAgICAgICAgICAgICAgVVNEICAgICAgIC0zLjAyCgoKQ3VzdG9tZXIgU2lnbmF0dXJlOiAgICAgICAgICAgICAgICAgICAgIAoKCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KCgoKQkFSQ09ERSBbCkJBUkNPREVUWVBFID0gVFlQRV8yT0Y1CkhFSUdIVCA9IDMKQUxJR05NRU5UID0gQ0VOVEVSCkJBUkNPREVURVhUUE9TSVRJT04gPSBBQk9WRQpWQUxVRSA9IDAwMTU5MTgwODAzMjEwMDYwMDAwMDcKQkFSQ09ERVRFWFRQT1NJVElPTiA9IEFCT1ZFCldJRFRIID0gMgpdCgoKICAgIBt8YkNDYXNoaWVyIE5hbWU6IE1pY2hlbGxlICAgICAgICAgICAgICAKCgoKRGF0ZSAgICAgVGltZSAgICAgU3RvcmUgICBQT1MgIEVtcCAgVFJYIAowMy8wOC8yMSAwMTo0OCBQTSA1OTE4ICAgIDYgICA4NDU3NyAwMDA3CgogICAgICAgICBUaGFua3MgZm9yIHNob3BwaW5nIGF0ICAgICAgICAgCiAgICAgICAgICAgICAgICAgSHktVmVlICAgICAgICAgICAgICAgICAKICAgICAgICAgIFZpc2l0IHVzIG9uIHRoZSBXZWIgICAgICAgICAgIAogICAgICAgICAgICAgd3d3Lmh5LXZlZS5jb20gICAgICAgICAgICAgCg==",
+        "any": []
+      }
+    ]
+  },
+  "layawayFlag": false,
+  "layawayTransactionType": null,
+  "any": [],
+  "majorVersion": 3,
+  "minorVersion": 0,
+  "fixVersion": 0,
+  "internalMajorVersion": 2,
+  "internalMinorVersion": 4,
+  "internalFixVersion": 7,
+  "cancelFlag": false,
+  "trainingModeFlag": false
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:mule-googlepubsub="http://www.mulesoft.org/schema/mule/mule-googlepubsub"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:db="http://www.mulesoft.org/schema/mule/db"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/mule-googlepubsub http://www.mulesoft.org/schema/mule/mule-googlepubsub/current/mule-mule-googlepubsub.xsd">
+	<configuration-properties
+		doc:name="Configuration properties"
+		doc:id="c72a1bd7-8cf4-4810-bd83-70cf4d508020"
+		file="config/configuration.yaml" />
+	<db:config name="Database_Config" doc:name="Database Config"
+		doc:id="70f1e0fd-eff0-4dd6-a617-d758d49149b4">
+		<db:mssql-connection host="${synapseSql.host}"
+			port="1433" user="${synapseSql.username}"
+			password="${synapseSql.password}" databaseName="${synapseSql.db}">
+			<db:connection-properties>
+			</db:connection-properties>
+		</db:mssql-connection>
+	</db:config>
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="845b228f-61ce-4720-8a01-3e7c6a3417dc" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<mule-googlepubsub:google-pubsub-consumer-config name="Google_PubSub_Google_PubSub_Consumer_Configuration" doc:name="Google PubSub Google PubSub Consumer Configuration" doc:id="ca0b65fa-36ba-40d0-8b6e-0ef0f5b9d4b0" >
+		<mule-googlepubsub:googlepubsub-consumer-connection topic="${google.pubsub.topicId}" projectId="${google.pubsub.projectId}" subscriptionId="${google.pubsub.subId}" credentialFilePath="/Users/mjones1/Source/hyvee/queue-to-synapse-papi/src/main/resources/google-key.json"/>
+	</mule-googlepubsub:google-pubsub-consumer-config>
+</mule>
