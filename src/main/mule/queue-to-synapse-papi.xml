@@ -124,8 +124,4 @@ VALUES
 			<logger level="INFO" doc:name="Logger" doc:id="83f6bc02-40ca-42ee-9e39-18a77268a551" />
 		</try>
 	</flow>
-	<flow name="queue-to-synapse-papiFlow" doc:id="fffa46a0-db64-4248-aa85-5949fc41bde6" >
-		<http:listener doc:name="Listener" doc:id="dbf6a30d-3f08-479b-9cce-0b188f20aa3c" path="/test" config-ref="HTTP_Listener_config"/>
-		<flow-ref doc:name="Flow Reference" doc:id="93febcc7-5c0d-442c-bbb2-c29808502ba1" name="insert-message-into-dw" />
-	</flow>
 </mule>
