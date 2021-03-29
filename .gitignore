@@ -46,7 +46,7 @@ target/
 .mule/**/*
 .DS_Store
 velocity.log
-*.yaml
-*.yml
+src/**/*.yaml
+src/**/*.yml
 google-key.json
 local-global.xml
