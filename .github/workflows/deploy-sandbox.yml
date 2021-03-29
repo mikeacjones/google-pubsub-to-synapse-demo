@@ -38,3 +38,4 @@ jobs:
           SQL_DB: ${{ secrets.SQL_DB }}
           SQL_USERNAME: ${{ secrets.SQL_USERNAME }}
           SQL_PASSWORD: ${{ secrets.SQL_PASSWORD }}
+          APP_NAME: sandbox-pubsub-to-synapse-papi-v1
