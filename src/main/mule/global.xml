@@ -21,6 +21,6 @@ http://www.mulesoft.org/schema/mule/mule-googlepubsub http://www.mulesoft.org/sc
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
 	<mule-googlepubsub:google-pubsub-consumer-config name="Google_PubSub_Google_PubSub_Consumer_Configuration" doc:name="Google PubSub Google PubSub Consumer Configuration" doc:id="ca0b65fa-36ba-40d0-8b6e-0ef0f5b9d4b0" >
-		<mule-googlepubsub:googlepubsub-consumer-connection topic="${google.pubsub.topicId}" projectId="${google.pubsub.projectId}" subscriptionId="${google.pubsub.subId}" credentialFilePath="/Users/mjones1/Source/hyvee/queue-to-synapse-papi/src/main/resources/google-key.json"/>
+		<mule-googlepubsub:googlepubsub-consumer-connection topic="${google.pubsub.topicId}" projectId="${google.pubsub.projectId}" subscriptionId="${google.pubsub.subId}" credentialFilePath="google-key.json"/>
 	</mule-googlepubsub:google-pubsub-consumer-config>
 </mule>

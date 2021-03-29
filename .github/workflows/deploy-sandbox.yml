@@ -11,7 +11,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Write out google-key.json
-        run: 'echo "$GOOG_KEY" > src/main/resources/google-key.json && cat src/main/resources/google-key.json'
+        run: 'echo "$GOOG_KEY" >> src/main/resources/google-key.json'
         shell: bash
         env:
           GOOG_KEY: ${{ secrets.GOOGLE_KEY }}
