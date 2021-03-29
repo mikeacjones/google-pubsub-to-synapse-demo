@@ -8,10 +8,6 @@
 http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/mule-googlepubsub http://www.mulesoft.org/schema/mule/mule-googlepubsub/current/mule-mule-googlepubsub.xsd">
-	<configuration-properties
-		doc:name="Configuration properties"
-		doc:id="c72a1bd7-8cf4-4810-bd83-70cf4d508020"
-		file="config/configuration.yaml" />
 	<db:config name="Database_Config" doc:name="Database Config"
 		doc:id="70f1e0fd-eff0-4dd6-a617-d758d49149b4">
 		<db:mssql-connection host="${synapseSql.host}"

@@ -42,6 +42,29 @@
 							<artifactId>msal4j</artifactId>
 						</sharedLibrary>
 					</sharedLibraries>
+					<cloudHubDeployment>
+						<muleVersion>4.3.0</muleVersion>
+						<username>${env.PLATFORM_USERNAME}</username>
+						<password>${env.PLATFORM_PASSWORD}</password>
+						<applicationName>${env.APP_NAME}</applicationName>
+						<environment>${env.PLATFORM_ENV}</environment>
+						<workers>1</workers>
+						<workerType>MICRO</workerType>
+						<objectStoreV2>true</objectStoreV2>
+						<region>us-east-2</region>
+						<businessGroupId>${env.BUSINESS_GROUP_ID}</businessGroupId>
+						<properties>
+							<anypoint.platform.client_id>${env.PLATFORM_CLIENT_ID}</anypoint.platform.client_id>
+							<anypoint.platform.client_secret>${env.PLATFORM_CLIENT_SECRET}</anypoint.platform.client_secret>
+							<synapseSql.username>${env.SQL_USERNAME}</synapseSql.username>
+							<synapseSql.password>${env.SQL_PASSWORD}</synapseSql.password>
+							<synapseSql.db>${env.SQL_DB}</synapseSql.db>
+							<synapseSql.host>hyveedemo.sql.azuresynapse.net</synapseSql.host>
+							<google.pubsub.topicId>${env.GOOG_TOPICID}</google.pubsub.topicId>
+							<google.pubsub.projectId>${env.GOOG_PROJECTID}</google.pubsub.projectId>
+							<google.pubsub.subId>${env.GOOG_SUBID}</google.pubsub.subId>
+						</properties>
+					</cloudHubDeployment>
 				</configuration>
 			</plugin>
 		</plugins>
