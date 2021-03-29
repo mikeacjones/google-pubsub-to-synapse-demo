@@ -72,7 +72,7 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>036483a5-15a5-4a47-88bf-2558eb69707b</groupId>
+			<groupId>af871948-2dd2-4f4c-8bbd-f6a997cd48d7</groupId>
 			<artifactId>mule-google-pubsub-extension</artifactId>
 			<version>1.0.0</version>
 			<classifier>mule-plugin</classifier>
