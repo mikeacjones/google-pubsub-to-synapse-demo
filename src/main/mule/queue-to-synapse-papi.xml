@@ -121,7 +121,7 @@ VALUES
 }]]]></db:bulk-input-parameters>
 				<db:sql ><![CDATA[INSERT INTO dbo.lineItems (msgUUID, lineItem) VALUES (:msgUUID, :lineItem)]]></db:sql>
 			</db:bulk-insert>
-			<logger level="INFO" doc:name="Logger" doc:id="83f6bc02-40ca-42ee-9e39-18a77268a551" />
+			<logger level="INFO" doc:name="Logger" doc:id="83f6bc02-40ca-42ee-9e39-18a77268a551" message="SUCCESSFULLY PROCESSED DATA FROM GOOGLE PUBSUB"/>
 		</try>
 	</flow>
 </mule>
