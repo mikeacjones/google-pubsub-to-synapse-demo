@@ -49,3 +49,4 @@ velocity.log
 *.yaml
 *.yml
 google-key.json
+local-global.xml
