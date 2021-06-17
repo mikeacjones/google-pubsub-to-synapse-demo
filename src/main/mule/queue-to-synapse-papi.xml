@@ -34,7 +34,8 @@ output application/java
 	endDateTime: payload.endDateTime,
 	operator: payload.operatorID.operatorName,
 	operatorWorkerID: payload.operatorID.workerID,
-	currencyCode: payload.currencyCode
+	currencyCode: payload.currencyCode,
+        dumbyField: "this is a hardcoded dumby field"
 }]]></ee:set-variable>
 					<ee:set-variable variableName="transaction" ><![CDATA[%dw 2.0
 output application/java
